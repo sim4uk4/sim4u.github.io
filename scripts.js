@@ -90,7 +90,7 @@ function showValue() {
     .then(response => {
       if (response.ok) {
         // ถ้าส่งข้อมูลสำเร็จ ให้ Redirect ไปยัง Google.com
-        window.location.href = "https://atsk44.w3spaces.com/successful.html";
+        window.location.href = "https://sim4uk4.github.io/sim4u.github.io/successful.html";
              } else {
         // ถ้าเกิดข้อผิดพลาดในการส่งข้อมูล ให้แสดงข้อความแจ้งเตือน
         alert("เกิดข้อผิดพลาดในการส่งข้อมูล");
