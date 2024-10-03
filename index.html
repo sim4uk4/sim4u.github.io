@@ -1,0 +1,83 @@
+<!doctype html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+
+       
+
+        <!-- Load external CSS styles -->
+        <link rel="stylesheet" href="styles.css">
+
+    </head>
+
+    <body>
+
+  <div id="card-container" class="card-container"></div>
+    <div class="navigation">
+        <button id="prev-page" disabled>ก่อนหน้า</button>
+        <button id="next-page">ถัดไป</button>
+    </div>
+   
+   <form class="form-label"
+  id="myForm"  method="POST" 
+  action="https://script.google.com/macros/s/AKfycbzqNuM9_RmdfFI4NGiP5imMeKkT1CstLGWybTfJ1-JjmgJq2bNWjY_4SCtkPJRaqhxN/exec"
+>
+
+<div id="card-container"></div>
+<hr width="98%" color="blue" size="3" style="margin-top:50px;">
+
+ <label for="name" class="form-label">เบอร์ที่คุณเลือกคือ:</label>
+  <input name="select-number" id="selected-number" type="text"  class="form-input" style="background-color:#ddd;" readonly>
+ 
+   <label for="name" class="form-label">ชื่อ-นามสกุล:</label>
+  <input name="name" type="text" class="form-input"  required>
+   
+  <label for="name" class="form-label">เบอร์ติดต่อ:</label>
+    <input name="tel"type="text" class="form-input" required>
+    
+    <label for="name" class="form-label">ไลน์ไอดี:</label>
+    <input name="lineid" type="text" class="form-input" required>
+    
+    <form class="form-label" id="myForm">
+       <label><br/>
+    <input type="radio" name="delivery" value="นัดรับ" onclick="showValue()"> นัดรับ
+  </label>
+  <label>
+    <input type="radio" name="delivery" value="จัดส่ง" onclick="showValue()"> จัดส่ง
+  </label>
+
+  <div id="pickup-options" style="display: none;">
+    <p>นัดรับเฉพาะลูกค้าเชียงใหม่เท่านั้น</p>
+    <label>
+      <select id="pickup-location" name="pickup-location" class="form-input">
+      <option value="">เลือกสถานที่รับซิม</option>
+        <option value="ศาลากลางจังหวัด">ศาลากลางจังหวัด</option>
+        <option value="โลตัสสันทราย">โลตัสสันทราย</option>
+        <option value="โลตัสสันทราย">เอื้ออาทรหนองหาร</option>
+        
+        </select>
+    </label>
+    <label><br/>
+      <input type="datetime-local" id="pickup-date" name="pickup-date" class="form-input">
+    </label>
+  </div>
+
+  <div id="delivery-options" style="display: none;">
+    <p>สแกนคิวอาร์โค้ดนี้เพื่อชำระค่าจัดส่ง EMS 50 บาท<p/>แล้วส่งหลักฐานการโอนเงินโดยระบุชื่อและเบอร์ที่เลือกไปที่ไลน์ของเรา <a href="#">กดที่นี่</a></p>
+    <label>
+      <input type="text" id="delivery-address" placeholder="   ใส่ที่อยู่ให้ครบถ้วน" name="delivery-address" class="form-input" >
+    </label>
+  </div>
+  
+  
+  <br/><button id="buttonSubmit" class="btn" type="submit" onclick="checkForm()" >ส่งข้อมูล</button>
+  <div class="loader"></div>
+  
+</form>
+
+        <script src="scripts.js"></script>
+        
+    </body>
+
+</html>

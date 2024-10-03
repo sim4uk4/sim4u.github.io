@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/* Center the loader */
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 50px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 8px solid;
+  border-color: #000 #0000;
+  animation: l1 1s infinite;
+  margin:50px;
+}
+@keyframes l1 {to{transform: rotate(.5turn)}}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+#myDiv {
+  display: none;
+  text-align: center;
+}
+</style>
+</head>
+<body onload="myFunction()" style="margin:0;">
+
+<center><div id="loader" class="loader"></div></center>
+
+<div style="display:none;" id="myDiv" class="animate-bottom">
+  <h2>บันทึกข้อมูลเรียบร้อย!</h2>
+  <p>โปรดรอการติดต่อกลับจากแอดมินเร็วๆนี้..</p>
+</div>
+
+<script>
+var myVar;
+
+function myFunction() {
+  myVar = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
+
+
+ 
+</script>
+<script>//ฟังชั่นส่งข้อความแจ้งเตือนไปไลน์ notifyเมื่อมีคนจองซิม
+    // แทนที่ 'YOUR_WEB_APP_URL' ด้วย URL ที่ได้จากการ deploy
+    var scriptUrl = 'https://script.google.com/macros/s/AKfycbzA4Rl0Yv9X7NLXXiq-uwy197zga81EOXl8ezNt7P1_fghO_mNce5uU1iPV3dTQi6NP/exec';
+
+    window.addEventListener('load', function() {
+  sendtoline();
+});
+
+function sendtoline() {
+  fetch(scriptUrl)
+    .then(response => response.text())
+    .then(data => console.log(data))
+    .catch(error => console.error('Error:', error));
+}
+  </script>
+ 
+</body>
+</html>
